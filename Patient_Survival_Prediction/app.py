@@ -4,14 +4,17 @@ import tensorflow as tf
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 import pandas as pd
 import pickle
-
+import os
 # Load the trained model and encoders
-dep_encoders = pickle.load(open("dep_encoders.pkl", "rb"))
-indep_encoder = pickle.load(open("indep_encoder.pkl", "rb"))
-knn_imputer = pickle.load(open('knn_imputer.pkl', 'rb'))
-simple_imputer = pickle.load(open('simple_imputer.pkl', 'rb'))
-zscaler = pickle.load(open('zscaler.pkl', 'rb'))
-model = pickle.load(open('LRModel.pkl', 'rb'))
+
+BASE_DIR = os.path.dirname(__file__)
+
+dep_encoders = pickle.load(open(os.path.join(BASE_DIR, "dep_encoders.pkl"), "rb"))
+indep_encoder = pickle.load(open(os.path.join(BASE_DIR, "indep_encoder.pkl"), "rb"))
+knn_imputer = pickle.load(open(os.path.join(BASE_DIR, "knn_imputer.pkl"), "rb"))
+simple_imputer = pickle.load(open(os.path.join(BASE_DIR, "simple_imputer.pkl"), "rb"))
+zscaler = pickle.load(open(os.path.join(BASE_DIR, "zscaler.pkl"), "rb"))
+model = pickle.load(open(os.path.join(BASE_DIR, "LRModel.pkl"), "rb"))
 
 st.title("Patient Survival Prediction")
 

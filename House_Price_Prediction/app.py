@@ -1,15 +1,21 @@
+import os
 import streamlit as st
 import pickle
 import pandas as pd
 import  warnings
 warnings.filterwarnings('ignore')
 
+BASE_DIR = os.path.dirname(__file__)
 
-limits = pickle.load(open("outlier_limits.pkl","rb"))
+limits = pickle.load(open(os.path.join(BASE_DIR, "outlier_limits.pkl"), "rb"))
 
-scalar=pickle.load(open("scalar.pkl","rb"))
+scalar=pickle.load(open(os.path.join(BASE_DIR, "scalar.pkl"), "rb"))
 
-model=pickle.load(open("regr.pkl", "rb"))
+model=pickle.load(open(os.path.join(BASE_DIR, "regr.pkl"), "rb"))
+
+knn_imputer=pickle.load(open(os.path.join(BASE_DIR, "knn_imputer.pkl"), "rb"))
+
+outlier_limits = pickle.load(open(os.path.join(BASE_DIR, "outlier_limits.pkl"), "rb"))
 
 #Streamlit app
 st.title("House Price Prediction")
