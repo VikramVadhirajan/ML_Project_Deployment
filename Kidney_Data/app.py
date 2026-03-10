@@ -8,19 +8,19 @@ import pickle
 
 #load the model
 
-with open('random_forest_model.pkl','rb') as file:
+with open('../Kidney_Data/random_forest_model.pkl','rb') as file:
     rfmodel=pickle.load(file)
 
-with open('knn_imputer.pkl','rb') as file:
+with open('../Kidney_Data/knn_imputer.pkl','rb') as file:
     knn_imputer=pickle.load(file)
 
-with open('simple_imputer.pkl','rb') as file:
+with open('../Kidney_Data/simple_imputer.pkl','rb') as file:
     simple_imputer=pickle.load(file)
 
-encoders = pickle.load(open("encoders.pkl", "rb"))
+encoders = pickle.load(open("../Kidney_Data/encoders.pkl", "rb"))
 
 
-with open('scalar.pkl','rb') as file:
+with open('../Kidney_Data/scalar.pkl','rb') as file:
     scaler=pickle.load(file)
 
 #Streamlit app
