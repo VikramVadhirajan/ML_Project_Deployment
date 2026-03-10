@@ -12,17 +12,19 @@ BASE_DIR = os.path.dirname(__file__)
 model_path = os.path.join(BASE_DIR, "random_forest_model.pkl")
 with open(model_path,'rb') as file:
     rfmodel=pickle.load(file)
-
-with open('../Kidney_Data/knn_imputer.pkl','rb') as file:
+imputer_path = os.path.join(BASE_DIR, "knn_imputer.pkl")
+with open(imputer_path,'rb') as file:
     knn_imputer=pickle.load(file)
 
-with open('../Kidney_Data/simple_imputer.pkl','rb') as file:
+simple_imputer_path = os.path.join(BASE_DIR, "simple_imputer.pkl")
+with open(simple_imputer_path,'rb') as file:
     simple_imputer=pickle.load(file)
+encoders_path = os.path.join(BASE_DIR, "encoders.pkl")
+with open(encoders_path,'rb') as file:
+    encoders = pickle.load(file)
 
-encoders = pickle.load(open("../Kidney_Data/encoders.pkl", "rb"))
-
-
-with open('../Kidney_Data/scalar.pkl','rb') as file:
+scalar_path = os.path.join(BASE_DIR, "scalar.pkl")
+with open(scalar_path,'rb') as file:
     scaler=pickle.load(file)
 
 #Streamlit app
