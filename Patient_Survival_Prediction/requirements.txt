@@ -1,0 +1,11 @@
+ipykernel
+pandas
+numpy
+scikit-learn
+tensorboard
+matplotlib
+streamlit
+scikeras
+openpyxl
+missingno
+imblearn
