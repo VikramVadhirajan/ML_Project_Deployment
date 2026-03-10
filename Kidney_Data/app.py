@@ -4,11 +4,13 @@ import tensorflow as tf
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 import pandas as pd
 import pickle
+import os
 
+BASE_DIR = os.path.dirname(__file__)
 
 #load the model
-
-with open('../Kidney_Data/random_forest_model.pkl','rb') as file:
+model_path = os.path.join(BASE_DIR, "random_forest_model.pkl")
+with open(model_path,'rb') as file:
     rfmodel=pickle.load(file)
 
 with open('../Kidney_Data/knn_imputer.pkl','rb') as file:
