@@ -108,7 +108,7 @@ input_data_scaled = zscaler.transform(pd.DataFrame([input_data]))
 prediction = model.predict(input_data_scaled)
 
 
-indep_encoder=pickle.load(open("indep_encoder.pkl","rb"))
+
 result = indep_encoder.inverse_transform(prediction)
 prediction_proba =max(model.predict_proba(input_data_scaled)[0])
 
