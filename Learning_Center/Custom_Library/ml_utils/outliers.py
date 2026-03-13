@@ -8,21 +8,14 @@ import pickle
 import os
 
 
-def detect_outliers(df, columns, file_name="outlier_bounds.pkl"):
+def detect_outliers(df, columns):
     """
     Detect outliers using IQR method for multiple columns
     and store bounds in a single pickle file.
     """
 
-    bounds = {}
 
-    # # Load existing pickle if present
-    # if os.path.exists(file_name):
-    #     with open(file_name, "rb") as f:
-    #         bounds = pickle.load(f)
-
-    outlier_dict = {}
-
+    result = []
     for col in columns:
 
         q1 = df[col].quantile(0.25)
@@ -33,22 +26,14 @@ def detect_outliers(df, columns, file_name="outlier_bounds.pkl"):
         lower = q1 - 1.5 * iqr
         upper = q3 + 1.5 * iqr
 
-        # Store bounds
-        bounds[col] = {
-            "lower": lower,
-            "upper": upper
-        }
-
         # Detect outliers
-        outliers = df[(df[col] < lower) | (df[col] > upper)]
+        outlier_count = ((df[col] < lower) | (df[col] > upper)).sum()
 
-        outlier_dict[col] = outliers
-
-    # Save bounds to pickle
-    with open(file_name, "wb") as f:
-        pickle.dump(bounds, f)
-
-    return outlier_dict
+        result.append({
+            "column": col,
+            "outlier_count": outlier_count
+        })
+    return result
 
 
 

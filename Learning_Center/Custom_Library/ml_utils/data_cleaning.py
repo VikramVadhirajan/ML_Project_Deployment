@@ -12,8 +12,8 @@ def remove_duplicates(df):
     return df.drop_duplicates()
 
 def missing_values(df):
-    """Return missing value count per column"""
-    return df.isnull().sum()
+    """Return missing value count per column with percentage"""
+    return (df.isnull().sum()/len(df)*100).round(2).sort_values(ascending=False)    
 
 
 def drop_null_rows(df):
@@ -21,9 +21,15 @@ def drop_null_rows(df):
 
 def get_column_types(df):
     
-    numeric_cols = df.select_dtypes(include=['int64','float64']).columns.tolist()
+    numeric_cols = (df
+                    .select_dtypes(include=['int64','float64'])
+                    .columns
+                    .tolist())
     
-    categorical_cols = df.select_dtypes(include=['object','category']).columns.tolist()
+    categorical_cols = (df
+                        .select_dtypes(include=['object','category'])
+                        .columns
+                        .tolist())
     
     return numeric_cols, categorical_cols
 
@@ -64,15 +70,6 @@ def clean_column_names(df):
     )
     
     return df
-
-def get_column_types(df):
-    
-    numeric_cols = df.select_dtypes(include=['int64','float64']).columns
-    
-    categorical_cols = df.select_dtypes(include=['object','category']).columns
-    
-    return numeric_cols, categorical_cols
-
 
 def remove_constant_columns(df):
     
