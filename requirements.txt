@@ -13,3 +13,5 @@ openpyxl
 missingno
 imblearn
 kagglehub
+transformers
+tqdm
