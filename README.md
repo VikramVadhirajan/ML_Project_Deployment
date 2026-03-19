@@ -1,176 +1,125 @@
-# ML Project Deployment
+# Machine Learning Project Deployment 🚀
 
-This repository contains resources, examples, and reusable utilities for **deploying machine learning models in production environments**.
+A comprehensive repository of **end-to-end Machine Learning projects** covering multiple real-world use cases, including healthcare, real estate, NLP, and finance.
 
-It includes end-to-end workflows covering:
+This repository demonstrates strong expertise in:
 
-* Data preprocessing
-* Feature engineering
-* Model training
-* Model serialization
-* Deployment-ready preprocessing pipelines
-* Custom reusable ML utilities
-
-The project is designed to help data scientists and machine learning engineers **build reproducible ML pipelines that can be deployed in real-world applications**.
+- Data preprocessing  
+- Feature engineering  
+- Model training & evaluation  
+- Deployment using Streamlit  
+- Building reusable ML pipelines  
 
 ---
 
-# Project Objectives
+## 📂 Repository Structure
 
-The main goals of this repository are:
-
-* Demonstrate **machine learning model deployment workflows**
-* Provide **reusable preprocessing modules**
-* Ensure **consistent preprocessing between training and inference**
-* Organize ML projects using **modular code structures**
-
----
-
-# Repository Structure
-
-```id="kgamli"
+```
 ML_Project_Deployment/
-
 │
-├── Learning_Center/
+├── 000_Learning_Center/              # Learning resources & practice
+├── 001_Kidney_Data/                 # Kidney Disease Prediction
+├── 002_House_Price_Prediction/      # House Price Prediction
+├── 003_Patient_Survival_Prediction/ # Patient Survival Prediction
+├── 004_Sentiment_Analysis/          # NLP Sentiment Analysis
+├── 005_Company_Bankruptcy_Prediction/ # Financial Risk Prediction
 │
-│   └── Custome_Modules/
-│       │
-│       └── ml_utils/
-│           ├── __init__.py
-│           ├── data_cleaning.py
-│           ├── feature_engineering.py
-│           ├── outliers.py
-│           └── scalar.py
-│
-├── notebooks/
-│
-├── models/
-│
+├── main.py                          # Entry script (if applicable)
+├── requirements.txt                 # Global dependencies
+├── LICENSE
 └── README.md
 ```
 
 ---
 
-# Custom ML Utility Module
+## 📌 Projects Overview
 
-The repository contains a reusable module called **ml_utils** which includes commonly used preprocessing utilities.
-
-### Available Utilities
-
-**data_cleaning.py**
-
-Provides functions for:
-
-* Detecting numeric and categorical columns
-* Removing duplicates
-* Dropping unnecessary columns
-* Basic dataset inspection
+### 🩺 Kidney Disease Prediction
+- Classification using Random Forest  
+- Preprocessing: Imputation, Encoding, Scaling  
+- Streamlit deployment  
 
 ---
 
-**feature_engineering.py**
-
-Provides utilities for:
-
-* Label encoding categorical variables
-* Encoding multiple columns
-* Saving encoders for deployment
+### 🏡 House Price Prediction
+- Regression model for real estate pricing  
+- Outlier handling + scaling  
+- Real-time predictions via UI  
 
 ---
 
-**outliers.py**
-
-Handles outlier detection and treatment:
-
-* Detect outliers using the IQR method
-* Replace outliers using clipping
-* Save outlier bounds for deployment
+### 🏥 Patient Survival Prediction
+- Logistic Regression-based classification  
+- Full preprocessing pipeline  
+- Healthcare dataset application  
 
 ---
 
-**scalar.py**
-
-Provides feature scaling utilities such as:
-
-* StandardScaler
-* MinMaxScaler
-* Saving scaler objects for reuse
+### 💬 Sentiment Analysis
+- NLP-based sentiment classification  
+- Excel-based batch prediction  
+- Streamlit interface  
 
 ---
 
-# Example Preprocessing Workflow
+### 💼 Company Bankruptcy Prediction
+- Financial risk prediction model  
+- Classification approach  
+- Business-focused use case  
 
-```python
-from ml_utils.data_cleaning import get_column_types
-from ml_utils.outliers import replace_outliers_multi
-from ml_utils.feature_engineering import label_encode_multiple
+---
 
-# Detect column types
-numeric_cols, categorical_cols = get_column_types(df)
+## ⚙️ Tech Stack
 
-# Replace outliers
-df = replace_outliers_multi(df, numeric_cols)
+- Python  
+- Pandas, NumPy  
+- Scikit-learn  
+- Streamlit  
+- Jupyter Notebook  
 
-# Encode categorical variables
-df = label_encode_multiple(df, categorical_cols)
+---
+
+## 🚀 Key Highlights
+
+- ✅ Multiple ML problem types (Regression, Classification, NLP)  
+- ✅ End-to-end pipelines  
+- ✅ Real-world datasets  
+- ✅ Deployment-ready apps  
+- ✅ Modular and reusable code  
+
+---
+
+## 🧠 Business Impact
+
+These projects demonstrate:
+
+- Translating data into actionable insights  
+- Building scalable ML pipelines  
+- Handling real-world noisy datasets  
+- Deploying models for real users  
+
+---
+
+## 🚀 How to Run Projects
+
+```bash
+git clone https://github.com/VikramVadhirajan/ML_Project_Deployment.git
+cd ML_Project_Deployment/<project_folder>
+pip install -r requirements.txt
+streamlit run app.py
 ```
 
 ---
 
-# Deployment Workflow
+## 👨‍💻 Author
 
-A typical ML deployment pipeline in this project follows these steps:
+**Vikram Vadhirajan**  
+Data Analyst | Machine Learning | Python | Power BI  
 
-1. Data cleaning
-2. Missing value handling
-3. Outlier detection and treatment
-4. Feature encoding
-5. Feature scaling
-6. Model training
-7. Save model and preprocessing artifacts
-
-Artifacts generated may include:
-
-```
-model.pkl
-encoders.pkl
-scaler.pkl
-outlier_bounds.pkl
-imputers.pkl
-```
-
-These artifacts allow the same preprocessing steps to be applied during **model inference**.
+GitHub: https://github.com/VikramVadhirajan  
 
 ---
 
-# Requirements
+## ⭐ Support
 
-The project primarily uses the following Python libraries:
-
-```
-pandas
-numpy
-scikit-learn
-pickle
-```
-
----
-
-# Future Enhancements
-
-Planned improvements include:
-
-* Automated preprocessing pipelines
-* Model monitoring tools
-* Feature selection utilities
-* Deployment examples using APIs
-* Integration with production ML pipelines
-
----
-
-# Author
-
-Vikram Vadhirajan
-
-Data Analyst | Machine Learning Enthusiast
+If you found this useful, consider giving this repository a ⭐
