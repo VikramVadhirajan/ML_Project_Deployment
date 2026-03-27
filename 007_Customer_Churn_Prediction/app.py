@@ -29,18 +29,33 @@ with open(encoders_path,'rb') as file:
 st.set_page_config(layout="wide")
 
 st.markdown("""
-<style>
-/* Make the second column sticky */
-div[data-testid="column"]:nth-of-type(2) {
-    position: sticky;
-    top: 100px;
-}
-</style>
+    <style>
+        /* Target the 3rd column specifically */
+        [data-testid="column"]:nth-child(3) [data-testid="stVerticalBlock"] {
+            position: fixed;
+            width: 30%; /* Adjust width to match column size */
+            height: 100vh;
+            overflow-y: auto;
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
+        }
+        
+        /* Alternative: Sticky approach (often smoother) */
+        [data-testid="column"]:nth-child(3) > div {
+            position: sticky;
+            top: 2rem;
+            align-self: flex-start;
+        }
+    </style>
 """, unsafe_allow_html=True)
+
+
+st.header("Customer Churn Prediction Pipeline Based model")
+
 col1, col2, col3 = st.columns([1,1,1])
 
 with col1:
-    st.header("Customer Inputs- Numerical")
+    st.subheader("Customer Inputs- Numerical")
     Tenure=st.number_input("Tenure",)
     City_Tier=st.number_input("City_Tier",)
     CC_Contacted_LY=st.number_input("CC_Contacted_LY",)
@@ -56,7 +71,7 @@ with col1:
     
 
 with col2:
-    st.header("Customer Inputs- Categorical")
+    st.subheader("Customer Inputs- Categorical")
     Payment=st.selectbox("Payment",label_encoder["Payment"].classes_)
     Gender=st.selectbox("Gender",label_encoder["Gender"].classes_)
     account_segment=st.selectbox("account_segment",label_encoder["account_segment"].classes_)
@@ -92,20 +107,22 @@ with col2:
 
 
 with col3:
+    st.markdown('<div class="result-column">', unsafe_allow_html=True)
     st.subheader("Churn Prediction Result")
-    if st.button("Predict"):
-        grid_model.best_estimator_
-        SVCmodel = grid_model.best_estimator_
-        # Predict churn
-        prediction = SVCmodel.predict(pd.DataFrame([input_data]))
-        prob = SVCmodel.predict_proba(pd.DataFrame([input_data]))[0][1]   # probability of churn
-        prob_percent = round(prob * 100, 2)
-        
-        if prediction[0] == 1:
-            st.error("⚠️ Customer Likely to Churn")
-        else:
-            st.success("✅ Customer Likely to Stay")
+    # if st.button("Predict"): # If predict button to predict after all the variable are punched in
+    grid_model.best_estimator_
+    SVCmodel = grid_model.best_estimator_
+    # Predict churn
+    prediction = SVCmodel.predict(pd.DataFrame([input_data]))
+    prob = SVCmodel.predict_proba(pd.DataFrame([input_data]))[0][1]   # probability of churn
+    prob_percent = round(prob * 100, 2)
+    
+    if prediction[0] == 1:
+        st.error("⚠️ Customer Likely to Churn")
+    else:
+        st.success("✅ Customer Likely to Stay")
 
-        st.metric("Churn Probability", f"{prob_percent}%")
-        st.progress(prob)
+    st.metric("Churn Probability", f"{prob_percent}%")
+    st.progress(prob)
+    st.markdown('</div>', unsafe_allow_html=True)
 
