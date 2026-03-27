@@ -57,7 +57,8 @@ def categorical_imputer(df, columns, strategy='most_frequent'):
 
 
 def drop_columns(df, columns):
-    return df.drop(columns=columns, axis=1)
+    df_dropped= df.drop(columns=columns, axis=1)
+    return df_dropped
 
 
 def clean_column_names(df):
@@ -74,3 +75,16 @@ def clean_column_names(df):
 def remove_constant_columns(df):
     
     return df.loc[:, df.nunique() > 1]
+
+
+def unqiue_value_count(df,columns):
+    for column in columns:
+        print("The Column - {} has {}". format(column,df[column].unique()))
+
+
+def clean_strings(df):
+    import string
+    import numpy as np
+    symbol_List = list(string.punctuation)
+    for i in df.columns:
+        df[i]=df[i].apply(lambda x: np.nan if x in symbol_List else x)
