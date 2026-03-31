@@ -2,9 +2,12 @@ import streamlit as st
 import pandas as pd
 import joblib
 from PIL import Image
+import os 
 
-image = Image.open('image.jpeg')
-st.image(image, caption='', width=1000)
+image_path = os.path.join(os.path.dirname(__file__), "image.jpeg")
+image = Image.open(image_path)
+
+st.image(image, use_container_width=True)
 
 pipeline = joblib.load('model_pipeline.pkl')
 
