@@ -1,11 +1,7 @@
 import pandas as pd
 import pickle
 import os
-
-
-import pandas as pd
-import pickle
-import os
+import matplotlib.pyplot as plt 
 
 
 def detect_outliers(df, columns):
@@ -16,6 +12,7 @@ def detect_outliers(df, columns):
 
 
     result = []
+    plotcol=[]
     for col in columns:
 
         q1 = df[col].quantile(0.25)
@@ -33,6 +30,14 @@ def detect_outliers(df, columns):
             "column": col,
             "outlier_count": outlier_count
         })
+        if outlier_count>=1:
+            plotcol.append(col)
+    if len(plotcol)>0:
+        df[plotcol].boxplot(figsize=(20,7),color='r')
+    plt.xticks(rotation=90)
+    plt.title('With Outliers',fontsize=10)
+    plt.show()
+    result = pd.DataFrame(result).sort_values(by="outlier_count", ascending=False)
     return result
 
 
