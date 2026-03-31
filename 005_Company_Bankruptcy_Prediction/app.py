@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from PIL import Image
 
-
+image = Image.open('image.jpeg')
+st.image(image, caption='', width=1000)
 
 pipeline = joblib.load('model_pipeline.pkl')
 
@@ -37,7 +39,7 @@ if uploaded_file is not None:
 
             input_df = df[feature_names]  # reorder to match training order
             input_df = df[feature_names].apply(pd.to_numeric, errors='coerce')
-            st.write("Input data (reordered):", input_df)
+            # st.write("Input data (reordered):", input_df)
             # Apply same outlier clipping as training
             for col in input_df.columns:
                 if col in outlier_bounds:
@@ -64,10 +66,21 @@ if uploaded_file is not None:
 
             probability_of_bankruptcy = float(proba[1])
 
+            # if pred == 1:
+            #     st.subheader("⚠️ Company Likely to go Bankrupt")
+            # else:
+            #     st.subheader("✅ Company Financially Stable")
+
             if pred == 1:
-                st.error("⚠️ Company Likely to go Bankrupt")
+                st.markdown(
+                    "<h3 style='color:red;'>⚠️ Company Likely to go Bankrupt</h3>",
+                    unsafe_allow_html=True
+                )
             else:
-                st.success("✅ Company Financially Stable")
+                st.markdown(
+                    "<h3 style='color:green;'>✅ Company Financially Stable</h3>",
+                    unsafe_allow_html=True
+                )
 
             # st.metric("Bankruptcy Probability", f"{round(probability_of_bankruptcy * 100, 2)}%")
             # st.progress(probability_of_bankruptcy)
