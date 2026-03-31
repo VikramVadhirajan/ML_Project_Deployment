@@ -4,14 +4,17 @@ import joblib
 from PIL import Image
 import os 
 
-image_path = os.path.join(os.path.dirname(__file__), "image.jpeg")
+BASE_DIR = os.path.dirname(__file__)
+
+image_path = os.path.join(BASE_DIR, "image.jpeg")
 image = Image.open(image_path)
 
 st.image(image, use_container_width=True)
 
-pipeline = joblib.load('model_pipeline.pkl')
 
-outlier_bounds = joblib.load('outlier_bounds.pkl')
+pipeline = joblib.load(os.path.join(BASE_DIR,'model_pipeline.pkl'))
+
+outlier_bounds = joblib.load(os.path.join(BASE_DIR,'outlier_bounds.pkl'))
 
 
 # Strip leading/trailing spaces from both pipeline feature names and uploaded columns
