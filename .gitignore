@@ -8,7 +8,7 @@
 999_GEN_AI_Projects/
 009_Custom_Vision_Model/**.env
 **.env 
-
+009_Custom_Vision_Model/Complete_CustomVision_Notebook.ipynb
 #ignoring all .env file using **.env
 
 
