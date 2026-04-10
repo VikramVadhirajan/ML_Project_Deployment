@@ -11,13 +11,13 @@
 000_Learning_Center/Model_Summary_Enhanced.xlsx
 000_Learning_Center/Model_Summary_Filled.xlsx
 000_Learning_Center/Ultimate_ML_Cheat_Sheet.xlsx
-
+000_Learning_Center/Python_Basics
+000_Learning_Center/Cheatsheets
+000_Learning_Center/All-Machine-Learning-Algorithms.zip
 
 # 009 Projects
 009_Custom_Vision_Model/Complete_CustomVision_Notebook.ipynb
-009_Custom_Vision_Model/Tagged_testImage
-009_Custom_Vision_Model/Test_Frames
-009_Custom_Vision_Model/Train_Frames
+009_Custom_Vision_Model/images_from_videos
 #ignoring all the videos
 **.mov
 
