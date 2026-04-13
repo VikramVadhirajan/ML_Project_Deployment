@@ -1,1 +1,6 @@
-print("Hello, World!")
+def main():
+    print("Hello from 07-python-projects!")
+
+
+if __name__ == "__main__":
+    main()

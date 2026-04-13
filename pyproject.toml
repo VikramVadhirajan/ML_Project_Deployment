@@ -1,0 +1,28 @@
+[project]
+name = "07-python-projects"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "azure-cognitiveservices-vision-customvision>=3.1.1",
+    "category-encoders>=2.9.0",
+    "imblearn>=0.0",
+    "ipykernel>=7.2.0",
+    "kagglehub>=1.0.0",
+    "matplotlib>=3.10.8",
+    "missingno>=0.5.2",
+    "moviepy>=2.2.1",
+    "numpy>=2.4.4",
+    "opencv-python==4.6.0.66",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.2",
+    "scikeras>=0.13.0",
+    "scikit-learn>=1.8.0",
+    "scipy>=1.17.1",
+    "streamlit>=1.56.0",
+    "tensorboard>=2.20.0",
+    "tensorflow>=2.16",
+    "tqdm>=4.67.3",
+    "transformers>=5.5.3",
+]
