@@ -37,3 +37,7 @@ git rm -r --cached "Folder you want to ignore"
 git commit -m "Stop tracking scraping scripts folder"
 
 
+
+uv init 
+uv venv # By default it creates .venv 
+uv add -r requirements.txt
