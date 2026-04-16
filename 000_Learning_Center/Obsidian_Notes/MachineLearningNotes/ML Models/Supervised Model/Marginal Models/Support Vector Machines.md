@@ -1,3 +1,6 @@
+
+![[Pasted image 20260416182823.png]]
+
 # Support Vector Machines (SVM)
 
 ## Definition
@@ -10,7 +13,7 @@ They are effective in **high-dimensional feature spaces** and can model both lin
 
 ## Problem Type
 
-- Classification
+- Classification ([[Support Vector Classification]])
     
 - Regression ([[Support Vector Regression]])
     
@@ -103,6 +106,13 @@ gamma → kernel coefficient
     
 
 ---
+
+## Python Documentation 
+
+https://scikit-learn.org/stable/modules/svm.html#
+
+---
+
 
 ## Related Concepts
 

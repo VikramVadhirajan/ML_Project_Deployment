@@ -1,3 +1,5 @@
+
+![[Pasted image 20260416182140.png|529]]
 # Logistic Regression
 
 Logistic Regression is a **supervised learning algorithm used for binary classification problems**.  
@@ -50,6 +52,13 @@ However, this value can range from **−∞ to +∞**, which is not valid for pr
 Therefore we apply a transformation.
 
 ---
+
+# Hyperparameters
+
+(_penalty='deprecated'_, _*_, _C=1.0_, _l1_ratio=0.0_, _dual=False_, _tol=0.0001_, _fit_intercept=True_, _intercept_scaling=1_, _class_weight=None_, _random_state=None_, _solver='lbfgs'_, _max_iter=100_, _verbose=0_, _warm_start=False_, _n_jobs=None_)
+
+---
+
 
 # Sigmoid Function
 
@@ -209,6 +218,11 @@ See: [[Softmax Regression]]
 
 ---
 
+# Python Documentation
+
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
+
+---
 # Related Concepts
 
 [[Supervised Learning]]  

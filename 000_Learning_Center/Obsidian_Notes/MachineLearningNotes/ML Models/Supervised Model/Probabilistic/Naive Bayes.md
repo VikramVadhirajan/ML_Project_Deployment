@@ -1,3 +1,6 @@
+
+![[Pasted image 20260416190314.png]]
+
 # Naive Bayes
 
 ## Definition

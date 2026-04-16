@@ -1,3 +1,8 @@
+
+![[Pasted image 20260416181735.png|633]]
+
+
+
 # K Nearest Neighbors (KNN)
 
 ## Definition

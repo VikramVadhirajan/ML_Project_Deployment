@@ -1,3 +1,6 @@
+
+![[Pasted image 20260416190152.png]]
+
 # Neural Networks
 
 ## Definition
@@ -31,7 +34,7 @@ Neuron output:
 
 z = w · x + b
 
-Activation:
+[[Activation Functions]]:
 
 a = σ(z)
 
@@ -62,6 +65,9 @@ Where:
 ---
 
 ## Important Hyperparameters
+
+(_hidden_layer_sizes=(100,)_, _activation='relu'_, _*_, _solver='adam'_, _alpha=0.0001_, _batch_size='auto'_, _learning_rate='constant'_, _learning_rate_init=0.001_, _power_t=0.5_, _max_iter=200_, _shuffle=True_, _random_state=None_, _tol=0.0001_, _verbose=False_, _warm_start=False_, _momentum=0.9_, _nesterovs_momentum=True_, _early_stopping=False_, _validation_fraction=0.1_, _beta_1=0.9_, _beta_2=0.999_, _epsilon=1e-08_, _n_iter_no_change=10_, _max_fun=15000_)
+
 
 learning_rate  
 number_of_layers  
@@ -105,7 +111,11 @@ epochs
     
 
 ---
+## Python Documentation 
 
+https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html
+
+---
 ## Related Concepts
 
 [[Activation Functions]]  

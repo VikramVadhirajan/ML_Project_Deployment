@@ -1,3 +1,6 @@
+
+![[Pasted image 20260416194809.png]]
+
 # Random Forest
 
 Random Forest is an **ensemble learning algorithm** that builds multiple [[Decision Trees]] and combines their predictions to produce a final result.
@@ -6,9 +9,9 @@ It improves model performance by **reducing overfitting and variance** compared 
 
 Random Forest can be used for:
 
-- [[Classification]]
+- Classification
     
-- [[Regression]]
+- Regression
     
 
 ---
@@ -27,9 +30,11 @@ Each tree makes a prediction, and the final output is obtained by combining thes
 
 The algorithm follows these steps:
 
-1. Draw multiple bootstrap samples from the training dataset.
+1. Draw multiple bootstrap samples from the training dataset. 
+	1. creating multiple new dataset randomly from the existing dataset
+	2. (Sample with replacement or consistent size or OOB- 36.8%)
     
-2. Train a [[Decision Trees]] model on each sample.
+2. Train a [[Decision Trees]] model on each sample (random selection of Feature).
     
 3. At each split, select a **random subset of features**.
     
@@ -121,7 +126,7 @@ Helps control overfitting.
 ---
 
 Maximum features (`max_features`)
-
+(_n_estimators=100_, _*_, _criterion='gini'_, _max_depth=None_, _min_samples_split=2_, _min_samples_leaf=1_, _min_weight_fraction_leaf=0.0_, _max_features='sqrt'_, _max_leaf_nodes=None_, _min_impurity_decrease=0.0_, _bootstrap=True_, _oob_score=False_, _n_jobs=None_, _random_state=None_, _verbose=0_, _warm_start=False_, _class_weight=None_, _ccp_alpha=0.0_, _max_samples=None_, _monotonic_cst=None_)[[source]](https://github.com/scikit-learn/scikit-learn/blob/fe2edb3cd/sklearn/ensemble/_forest.py#L1174)
 Number of features considered at each split.
 
 Common values:
@@ -172,6 +177,7 @@ Random Forest:
 # Example (Python)
 
 Using **scikit-learn**:
+https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
 
 ```python
 from sklearn.ensemble import RandomForestClassifier

@@ -135,9 +135,9 @@ These models use layered neural structures to learn complex relationships.
     
 - [[Deep Neural Networks]]
     
-- [[Convolutional Neural Networks]]
+- [[CNN]]
     
-- [[Recurrent Neural Networks]]
+- [[RNN]]
     
 
 ---

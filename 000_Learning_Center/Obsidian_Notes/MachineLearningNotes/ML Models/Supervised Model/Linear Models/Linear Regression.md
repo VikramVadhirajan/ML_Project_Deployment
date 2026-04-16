@@ -1,3 +1,6 @@
+
+![[Pasted image 20260416181924.png]]
+
 # Linear Regression
 
 Linear Regression is a supervised learning algorithm used to model the relationship between **input variables and a continuous output variable**.
@@ -36,6 +39,12 @@ y = β0 + β1x1 + β2x2 + ... + βnxn + ε
 Matrix form:
 
 y = Xβ + ε
+
+---
+
+# Hyper Parameters
+
+(_*_, _fit_intercept=True_, _copy_X=True_, _tol=1e-06_, _n_jobs=None_, _positive=False_)
 
 ---
 
@@ -87,3 +96,8 @@ Linear regression relies on several assumptions:
 - Normal distribution of errors
     
 - No strong [[Multicollinearity]]
+
+---
+# Python Documentation
+
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html

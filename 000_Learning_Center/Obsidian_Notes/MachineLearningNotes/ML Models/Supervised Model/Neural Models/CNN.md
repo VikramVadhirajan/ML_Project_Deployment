@@ -1,3 +1,6 @@
+
+![[Pasted image 20260416185954.png]]
+
 # Convolutional Neural Networks (CNN)
 
 ## Definition
@@ -85,7 +88,11 @@ padding
     
 
 ---
+## Python Documentation 
 
+https://www.tensorflow.org/tutorials/images/cnn
+
+---
 ## Related Concepts
 
 [[Neural Networks]]  

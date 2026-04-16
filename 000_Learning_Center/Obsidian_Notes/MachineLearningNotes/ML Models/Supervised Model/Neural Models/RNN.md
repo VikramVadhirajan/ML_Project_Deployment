@@ -1,3 +1,4 @@
+![[Pasted image 20260416190233.png]]
 # Recurrent Neural Networks (RNN)
 
 ## Definition
@@ -91,7 +92,11 @@ learning_rate
     
 
 ---
+## Python Documentation 
 
+https://www.tensorflow.org/guide/keras/working_with_rnns
+
+---
 ## Related Concepts
 
 [[Neural Networks]]  

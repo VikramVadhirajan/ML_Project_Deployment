@@ -1,3 +1,6 @@
+
+![[Pasted image 20260416194608.png]]
+
 # Decision Trees
 
 ## Definition
@@ -31,6 +34,8 @@ Decision trees can be used for both [[Classification]] and [[Regression]].
 The algorithm splits the dataset into subsets based on **feature values that maximize class separation**.
 
 Each split aims to reduce **impurity in the dataset**.
+
+Purity meaning the leaf should be able to predict the class without any loss or predicts correctly. 
 
 ---
 
