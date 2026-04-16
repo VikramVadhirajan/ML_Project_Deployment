@@ -22,6 +22,11 @@
 **.mov
 
 
+#Ignoring obsidian images
+000_Learning_Center/Obsidian_Notes/**/*.png
+000_Learning_Center/Obsidian_Notes/**/*.json
+**/.obsidian/
+
 #if the file/ folder  is already commited use this 
 #git rm -r --cached folder name
 #git commit -m "Stop tracking foldername folder"
