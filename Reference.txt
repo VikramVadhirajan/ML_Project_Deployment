@@ -70,5 +70,6 @@
         Download a model without immediately running it. ollama pull <model-name> 
         Clear the conversation context.    /clear
         Adjust model parameters during a session /set parameter ...
+        
 
 
